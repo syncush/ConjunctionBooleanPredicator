@@ -3,7 +3,7 @@ class Var:
 
     def __init__(self, isPositive=True, ind=0):
         self.isPositiveForm = isPositive
-        self.index = ind;
+        self.index = ind
 
     def calcVal(self, val):
         return (self.isPositiveForm and val == 1) or (not (self.isPositiveForm) and val == 0)
@@ -25,14 +25,14 @@ class Hypothesis:
     def removeElemInHypo(self, isPos, index):
         pie = 0
         for elem in self.list:
-            if (elem.index == index and isPos == elem.isPositiveForm):
+            if elem.index == index and isPos == elem.isPositiveForm:
                 del self.list[pie]
             pie = pie + 1
 
     def printHypo(self):
         string_answer = '';
         for elem in self.list:
-            if (elem.isPositiveForm):
+            if elem.isPositiveForm:
                 string_answer += 'x{0},'.format(elem.index)
             else:
                 string_answer += 'not(x{0}),'.format(elem.index)
